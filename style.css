@@ -1,0 +1,23 @@
+hr.solid {
+    border-top: 1px solid #f8f8f8;
+}
+
+div.head {
+    padding-left: 15px;
+    position: sticky;
+}
+
+div.about {
+    padding-left: 15px;
+}
+
+div.hobbies {
+    padding-left: 15px;
+    font-family: r;
+}
+
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }

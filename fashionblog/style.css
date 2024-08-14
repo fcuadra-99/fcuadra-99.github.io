@@ -1,3 +1,8 @@
 body {
-  background-color=#141414;
+  font-family: 'Courier New', monospace;
+}
+
+ul { 
+  display: inline-block; 
+  text-align: left; 
 }

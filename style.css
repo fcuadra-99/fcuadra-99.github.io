@@ -1,23 +1,124 @@
-hr.solid {
-    border-top: 1px solid #f8f8f8;
+body {
+  margin: 0px;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 0, 25, 1) 0%,
+    rgb(34, 34, 61) 60%,
+    rgb(59, 70, 90) 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-div.head {
-    padding-left: 15px;
-    position: sticky;
+.navbar {
+  background-color: rgb(30, 33, 41);
+  width: 100%;
+  height: 91px;
+  flex-wrap: wrap;
+  overflow: hidden;
+  float: left;
+  position: sticky;
 }
 
-div.about {
-    padding-left: 15px;
+.navbar .logo {
+  float: left;
+  width: 50px;
+  padding: 18px 30px;
 }
 
-div.hobbies {
-    padding-left: 15px;
-    font-family: r;
+.navbar .side {
+  color: #ffffff;
+  width: 50px;
+  height: 100px;
+  padding: 10px 25px;
+  text-align: center;
 }
 
-.roboto-regular {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+.navbar a {
+  visibility: visible;
+  float: left;
+  color: white;
+  fill: white;
+  margin-top: 8px;
+  padding: 33px 19px;
+  width: 75px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+.navbar .side {
+  visibility: visible;
+  float: left;
+  color: white;
+  fill: white;
+  vertical-align: middle;
+  margin-top: 8px;
+  padding: 5px 19px;
+  width: 75px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.navbar a:hover {
+  background-color: #ffffff;
+  font-family: "Inter", sanas-serif;
+  fill: black;
+  color: black;
+  font-weight: bold;
+  transition-duration: 0.3s;
+}
+
+.navbar a.active {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(3, 0, 34) 100%);
+  color: white;
+}
+
+.landing {
+  display: inline;
+}
+
+.landing p {
+  margin: 0px;
+  padding: 75px 75px;
+  float: left;
+  text-align: center;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 800%;
+  font-weight: bold;
+  display: block;
+}
+
+@media screen and (max-width: 1080px) {
+  .navbar {
+    width: 110px;
+    height: 100vh;
   }
+
+  .navbar .top {
+    display: none;
+  }
+
+  .landing {
+    display: inline;
+    padding: 0px 0px;
+    font-size: 75%;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .landing p {
+    display: none;
+  }
+}

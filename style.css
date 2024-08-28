@@ -31,10 +31,10 @@ body {
   width: 50px;
   height: 100px;
   padding: 10px 25px;
-  text-align: center;
+  align-content: center;
 }
 
-.navbar a {
+.navbar .top {
   visibility: visible;
   float: left;
   color: white;
@@ -52,24 +52,21 @@ body {
 }
 
 .navbar .side {
-  visibility: visible;
+  display: none;
   float: left;
   color: white;
   fill: white;
-  vertical-align: middle;
-  margin-top: 8px;
-  padding: 5px 19px;
+  background-color: #07051800;
+  margin-left: 8px;
+  padding: 10px 19px;
   width: 75px;
   text-align: center;
   text-decoration: none;
-  font-size: 15px;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
-.navbar a:hover {
+.navbar .top:hover {
   background-color: #ffffff;
   font-family: "Inter", sanas-serif;
   fill: black;
@@ -78,10 +75,34 @@ body {
   transition-duration: 0.3s;
 }
 
-.navbar a.active {
-  font-family: "Inter", sans-serif;
-  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(3, 0, 34) 100%);
+.navbar .activetop {
+  display: block;
+  float: left;
   color: white;
+  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(3, 0, 34) 100%);
+  margin-top: 8px;
+  padding: 33px 19px;
+  width: 75px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+.navbar .activeside {
+  display: none;
+  float: left;
+  color: white;
+  fill: white;
+  background: linear-gradient(180deg, #070518 0%, #0f0e25 100%);
+  margin-left: 8px;
+  padding: 40px 19px;
+  width: 75px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
 .landing {
@@ -110,6 +131,18 @@ body {
     display: none;
   }
 
+  .navbar .activetop {
+    display: none;
+  }
+
+  .navbar .side {
+    display: block;
+  }
+
+  .navbar .activeside {
+    display: block;
+  }
+
   .landing {
     display: inline;
     padding: 0px 0px;
@@ -121,4 +154,13 @@ body {
   .landing p {
     display: none;
   }
+
+  .navbar.side {
+    display: block;
+  }
+
+  .navbar.activeside {
+    display: block;
+  }
+
 }

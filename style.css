@@ -22,7 +22,8 @@ body {
 
 .navbar .logo {
   float: left;
-  width: 50px;
+  margin-top: 1px;
+  width: 45px;
   padding: 18px 30px;
 }
 
@@ -39,16 +40,13 @@ body {
   float: left;
   color: white;
   fill: white;
-  margin-top: 8px;
-  padding: 33px 19px;
+  padding: 35px 19px;
   width: 75px;
   text-align: center;
   text-decoration: none;
   font-size: 15px;
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
 }
 
 .navbar .side {
@@ -57,13 +55,10 @@ body {
   color: white;
   fill: white;
   background-color: #07051800;
-  margin-left: 8px;
-  padding: 10px 19px;
+  padding: 0px 5px;
   width: 75px;
   text-align: center;
   text-decoration: none;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
 }
 
 .navbar .top:hover {
@@ -75,21 +70,53 @@ body {
   transition-duration: 0.3s;
 }
 
+.navbar .side:hover {
+  background-color: #ffffff;
+  fill: #070518;
+  font-family: "Inter", sanas-serif;
+  fill: black;
+  color: black;
+  font-weight: bold;
+  transition-duration: 0.3s;
+}
+
+.navbar .side img {
+  width: 25px;
+}
+
+.navbar #hico {
+  width: 45px;
+}
+
+.navbar #wico {
+  width: 30px;
+}
+
+.navbar #lico {
+  width: 32px;
+}
+
+.navbar #aico {
+  width: 30px;
+}
+
+.navbar #cico {
+  width: 30px;
+}
+
+
 .navbar .activetop {
   display: block;
   float: left;
   color: white;
   background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(3, 0, 34) 100%);
-  margin-top: 8px;
-  padding: 33px 19px;
+  padding: 38px 19px;
   width: 75px;
   text-align: center;
   text-decoration: none;
   font-size: 15px;
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
 }
 
 .navbar .activeside {
@@ -97,21 +124,39 @@ body {
   float: left;
   color: white;
   fill: white;
-  background: linear-gradient(180deg, #070518 0%, #0f0e25 100%);
-  margin-left: 8px;
-  padding: 40px 19px;
+  align-content: center;
+  background: linear-gradient(180deg, #08051b 0%, #0d0c22 100%);  
+  padding: 30px 20px;
   width: 75px;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
 }
 
 .landing {
   display: inline;
 }
 
-.landing p {
+#avatar img{
+  width: 300px;
+  margin-top: 80px;
+  margin-left: 80px;
+  margin-right: 100%;
+  float: left;
+  display: block;
+}
+
+.landing #content{
   margin: 0px;
-  padding: 75px 75px;
+  padding-left: 90px;
+  padding-top: 10px;
+  color: #e6e6e6;
+  display: inline;
+  float: left;
+  font-family: "Inter", sans-serif;
+}
+
+.landing #mz {
+  margin: 0px;
+  margin-right: 100%;
+  padding-left: 80px;
   float: left;
   text-align: center;
   color: white;
@@ -119,12 +164,89 @@ body {
   font-size: 800%;
   font-weight: bold;
   display: block;
+  background: linear-gradient(to bottom right, #4823ff, #ff2525);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.landing #mzx {
+  margin: 0px;
+  margin-right: 100%;
+  padding-left: 80px;
+  padding-top: 50px;
+  float: left;
+  text-align: center;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 800%;
+  font-weight: bold;
+  display: inline;
+  background: linear-gradient(to bottom right, #4823ff, #ff2525);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+#mm {
+  font-size: 200px;
+}
+
+#zn {
+  font-size: 125px;
 }
 
 @media screen and (max-width: 1080px) {
   .navbar {
-    width: 110px;
+    width: 85px;
     height: 100vh;
+  }
+
+  .landing #mz{
+    margin: 0px;
+    padding-left: 70px;
+    padding-top: 10px;
+    margin-right: 0px;
+  }
+
+  .landing #mzx{
+    margin: 0px;
+    padding-left: 70px;
+    padding-top: 50px;
+    margin-right: 0px;
+  }
+
+  .landing #content{
+    margin: 0px;
+    padding-left: 80px;
+    padding-top: 10px;
+    color: #e6e6e6;
+    display: inline;
+    float: left;
+    font-family: "Inter", sans-serif;
+  }
+  
+  #avatar img{
+    width: 300px;
+    margin-top: 50px;
+    margin-left: 60px;
+    margin-right: 30%;
+    float: left;
+    display: block;
+  }
+  .landing img {
+    margin: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
+
+  .navbar .logo {
+    float: left;
+    width: 45px;
+    padding: 15px 21px;
+    margin-bottom: 10px;
   }
 
   .navbar .top {
@@ -143,15 +265,18 @@ body {
     display: block;
   }
 
+  .navbar .activeside img {
+    align-content: center;
+  }
+
   .landing {
     display: inline;
     padding: 0px 0px;
-    font-size: 75%;
   }
 }
 
 @media screen and (max-width: 780px) {
-  .landing p {
+  .landing {
     display: none;
   }
 

@@ -80,28 +80,40 @@ body {
   transition-duration: 0.3s;
 }
 
+.landing a {
+  display: inline-table;
+  width: 50%;
+  margin-top: 30px;
+  margin-left: 90px;
+  float: left;
+  font-style: normal;
+  color: white;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+}
+
 .navbar .side img {
   width: 25px;
 }
 
 .navbar #hico {
-  width: 45px;
+  width: 35px;
 }
 
 .navbar #wico {
-  width: 30px;
+  width: 35px;
 }
 
 .navbar #lico {
-  width: 32px;
+  width: 35px;
 }
 
 .navbar #aico {
-  width: 30px;
+  width: 35px;
 }
 
 .navbar #cico {
-  width: 30px;
+  width: 35px;
 }
 
 
@@ -126,7 +138,7 @@ body {
   fill: white;
   align-content: center;
   background: linear-gradient(180deg, #08051b 0%, #0d0c22 100%);  
-  padding: 30px 20px;
+  padding: 30px 25px;
   width: 75px;
 }
 

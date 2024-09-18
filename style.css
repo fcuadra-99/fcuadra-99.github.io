@@ -40,7 +40,7 @@ body {
   float: left;
   color: white;
   fill: white;
-  padding: 35px 19px;
+  padding: 36px 19px;
   width: 75px;
   text-align: center;
   text-decoration: none;
@@ -63,7 +63,7 @@ body {
 
 .navbar .top:hover {
   background-color: #ffffff;
-  font-family: "Inter", sanas-serif;
+  font-family: "Inter", sans-serif;
   fill: black;
   color: black;
   font-weight: bold;
@@ -73,7 +73,7 @@ body {
 .navbar .side:hover {
   background-color: #ffffff;
   fill: #070518;
-  font-family: "Inter", sanas-serif;
+  font-family: "Inter", sans-serif;
   fill: black;
   color: black;
   font-weight: bold;
@@ -100,10 +100,13 @@ body {
   margin-left: 80px;
   margin-right: 10%;
   float: left;
+  width: 800px;
   font-style: normal;
   color: white;
+  font-weight: 400;
   text-decoration: none;
   font-family: "Inter", sans-serif;
+  border-color: white;
 }
 
 .landing td {
@@ -134,7 +137,6 @@ body {
 .navbar #cico {
   width: 35px;
 }
-
 
 .navbar .activetop {
   display: block;
@@ -178,12 +180,13 @@ body {
   margin: 0px;
   display: block;
   float: left;
-  padding-left: 100px;
+  padding-left: 80px;
   padding-top: 10px;
-  padding-right: 20%;
+  padding-right: 30%;
   color: #e6e6e6;
   display: inline;
   float: left;
+  font-weight: 600;
   font-family: "Inter", sans-serif;
 }
 
@@ -239,16 +242,29 @@ body {
 
   .landing #mz{
     margin: 0px;
-    padding-left: 70px;
-    padding-top: 10px;
+    padding-left: 80px;
+    padding-top: 20px;
     margin-right: 0px;
   }
 
   .landing #mzx{
     margin: 0px;
-    padding-left: 70px;
-    padding-top: 50px;
+    padding-left: 80px;
+    padding-top: 60px;
     margin-right: 0px;
+  }
+
+  .landing #content{
+    margin: 0px;
+    display: block;
+    float: left;
+    padding-left: 100px;
+    padding-top: 10px;
+    padding-right: 30%;
+    color: #e6e6e6;
+    display: inline;
+    float: left;
+    font-family: "Inter", sans-serif;
   }
 
   .landing #content{

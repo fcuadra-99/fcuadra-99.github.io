@@ -1,3 +1,7 @@
+* {
+  border-radius: 5px;
+}
+
 body {
   margin: 0px;
   background: linear-gradient(
@@ -188,6 +192,35 @@ body {
   float: left;
   font-weight: 600;
   font-family: "Inter", sans-serif;
+}
+
+label {
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+
+td {
+  width: 100px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+
+td #content {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+
+input {
+  width: 300px;
+  height: 25px;
+  color: #07051800;
+}
+
+button {
+  width: 300px;
+  height: 25px;
 }
 
 .landing #mz {

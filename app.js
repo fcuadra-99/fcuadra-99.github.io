@@ -8,17 +8,16 @@ const camera = new THREE.PerspectiveCamera(
     0.1,
     2000
 );
-camera.position.z = 1000;
-camera.position.y = 50;
+camera.position.z = 4;
+camera.position.y = 0.2;
 
 const scene = new THREE.Scene();
-let katarenaiNemurenai;
-let mixer;
+let migu;
 const loader = new GLTFLoader();
-loader.load('bonne.glb',
+loader.load('migu.glb',
     function (gltf) {
-        katarenaiNemurenai = gltf.scene;
-        scene.add(katarenaiNemurenai);
+        migu = gltf.scene;
+        scene.add(migu);
     },
     function (xhr) {},
     function (error) {}
@@ -27,16 +26,8 @@ const renderer = new THREE.WebGLRenderer({alpha: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
 
-// light
-const ambientLight = new THREE.AmbientLight(0xffffff, 1.3);
-scene.add(ambientLight);
-
-const topLight = new THREE.DirectionalLight(0xffffff, 1);
-topLight.position.set(500, 500, 500);
-scene.add(topLight);
-
 const reRender3D = () => {
-    scene.rotateY(.05);
+    scene.rotateY(.1);
     requestAnimationFrame(reRender3D);
     renderer.render(scene, camera);
 };

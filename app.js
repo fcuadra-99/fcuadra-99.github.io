@@ -7,10 +7,12 @@ const camera = new THREE.PerspectiveCamera(
     0.1,
     500
 );
+
 camera.position.z = 4;
 camera.position.y = 0.2;
 
 const scene = new THREE.Scene();
+
 let migu;
 const loader = new GLTFLoader();
 loader.load('migu.glb',
@@ -19,7 +21,9 @@ loader.load('migu.glb',
         migu.position.z = 0.015;
         scene.add(migu);
     },
-    function (xhr) {},
+    function (xhr) {
+        document.getElementById("container3D").style.animation = "intro 4s ease-out";
+    },
     function (error) {}
 );
 

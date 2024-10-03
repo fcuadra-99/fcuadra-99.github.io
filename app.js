@@ -16,11 +16,13 @@ const loader = new GLTFLoader();
 loader.load('migu.glb',
     function (gltf) {
         migu = gltf.scene;
+        migu.position.z = 0.015;
         scene.add(migu);
     },
     function (xhr) {},
     function (error) {}
 );
+
 const renderer = new THREE.WebGLRenderer({alpha: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);

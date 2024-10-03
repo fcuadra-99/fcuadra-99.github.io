@@ -10,9 +10,10 @@ body {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 900;
     color: rgb(255, 255, 255);
-    font-size: 7vw;
+    font-size: 4vw;
+    font-weight: 100;
     text-align: center;
-    margin-top: 30vh;
+    margin-top: 35vh;
     padding: 30px 0 30px 0px;
     transition: all 500ms ease-out;
     background-color: #00000063;
@@ -66,5 +67,19 @@ button:hover {
     }
     to {
         background-color: #1b1b1b00;
+    }
+}
+
+/* Tablet */
+@media screen and (max-width: 1080px) {
+    #ytape {
+        font-size: 5vw;
+    }
+}
+
+/* Phone */
+@media screen and (max-width: 720px) {
+    #ytape {
+        font-size: 7vw;
     }
 }

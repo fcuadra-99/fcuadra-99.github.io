@@ -72,7 +72,7 @@ body {
   fill: black;
   color: black;
   font-weight: bold;
-  transition-duration: 0.3s;
+  transition-duration: 1s;
 }
 
 .navbar .side:hover {

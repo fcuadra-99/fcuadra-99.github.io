@@ -40,7 +40,7 @@ button {
     border: 20px; border-style: none;
     right: 0; bottom: 0;
     margin: 2em;
-    max-width: 12em; width: 20vw; min-width: 7em;
+    max-width: 12em; width: 20vw; min-width: 6em;
     transition: all 500ms ease-out;
     max-height: 6vh;
     min-height: 4vh;
@@ -55,6 +55,7 @@ button {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 100;
     font-size: .8em;
+    transition: all 500ms ease-out;
 }
 
 button:hover {

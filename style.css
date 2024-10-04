@@ -13,11 +13,13 @@ body {
     font-size: 4vw;
     font-weight: 100;
     text-align: center;
-    margin-top: 35vh;
+    top: 29vh;
     padding: 30px 0 30px 0px;
     transition: all 500ms ease-out;
     background-color: #00000063;
     width: 100%;
+    pointer-events: none;
+    position: fixed;
 }
 
 *::-webkit-scrollbar {
@@ -56,6 +58,7 @@ button {
     font-weight: 100;
     font-size: .8em;
     transition: all 500ms ease-out;
+    pointer-events: none;
 }
 
 button:hover {

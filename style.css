@@ -1,117 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+
 body {
-    margin: 0;
-    background-color: #1B1B1B;
-    overflow: hidden;
-    z-index: 1;
-    align-content: center;
+  margin: 0;
+  background-color: #1b1b1b;
+  overflow: hidden;
+  z-index: 1;
+  align-content: center;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 30px;
+  background-color: rgb(51, 51, 51);
+  padding: 20px 20px 20px 30px;
+  display: inline;
+}
+
+nav #ho {
+  color: rgb(104, 230, 223);
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: 28px 20px;
+  margin-right: 180px;
+  font-family: "Major Mono Display", monospace;
+  font-weight: 100;
+  font-size: 0.75em;
+}
+
+.navitems {
+  animation: none fadei1 1s;
+  opacity: 1;
+  display: block;
+}
+
+nav #wo {
+  color: rgb(255, 255, 255);
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: 28px 20px;
+  margin-right: 100px;
+  font-family: "Major Mono Display", monospace;
+  font-weight: 100;
+  font-size: 0.75em;
+}
+
+nav #ab {
+  color: rgb(255, 255, 255);
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: 28px 20px;
+  margin-right: 20px;
+  font-family: "Major Mono Display", monospace;
+  font-weight: 100;
+  font-size: 0.75em;
+}
+
+nav #burg {
+  background-color: rgb(104, 230, 223);
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  margin: 20px;
+  margin-right: 30px;
+  opacity: 0;
+  animation: none fadeo 1s;
+}
+
+nav #ho:hover,
+nav #wo:hover,
+nav #ab:hover {
+  background-color: white;
+  color: black;
+  transition: all 500ms ease-out;
+}
+
+#logo {
+  background-color: aquamarine;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  float: inline-start;
 }
 
 #ytape {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 900;
-    color: rgb(255, 255, 255);
-    font-size: 4vw;
-    font-weight: 100;
-    text-align: center;
-    top: 29vh;
-    padding: 30px 0 30px 0px;
-    transition: all 500ms ease-out;
-    background-color: #00000063;
-    width: 100%;
-    position: fixed;
-    pointer-events: none;
+  font-family: "Major Mono Display", monospace;
+  font-weight: 900;
+  color: rgb(255, 255, 255);
+  font-size: 4vw;
+  font-weight: 500;
+  text-align: center;
+  top: 32vh;
+  padding: 3vh 0 3vh 0px;
+  transition: all 500ms ease-out;
+  background-color: #00000063;
+  width: 100%;
+  position: fixed;
+  pointer-events: none;
 }
 
 *::-webkit-scrollbar {
-    width: 0;
+  width: 0;
 }
 
 #container3D {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
 }
 
 button {
-    float: inline-end;
-    border-color: rgba(240, 248, 255, 0);
-    border-radius: 5px;
-    background-color: rgb(104, 230, 223);
-    font-family: 'Courier New', Courier, monospace;
-    position: absolute;
-    border: 20px; border-style: none;
-    right: 0; bottom: 0;
-    margin: 2em;
-    max-width: 12em; width: 20vw; min-width: 6em;
-    transition: all 500ms ease-out;
-    max-height: 6vh;
-    min-height: 4vh;
+  float: inline-end;
+  border-color: rgba(240, 248, 255, 0);
+  border-radius: 5px;
+  background-color: rgb(104, 230, 223);
+  font-family: "Major Mono Display", monospace;
+  position: absolute;
+  border: 20px;
+  font-weight: 500;
+  border-style: none;
+  right: 0;
+  bottom: 0;
+  margin: 2em;
+  max-width: 16em;
+  width: 20vw;
+  min-width: 7em;
+  transition: all 500ms ease-out;
+  max-height: 6vh;
+  min-height: 4vh;
 }
 
 #ref {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    margin: 30px;
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 100;
-    font-size: .8em;
-    transition: all 500ms ease-out;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 30px;
+  color: white;
+  font-family: "Major Mono Display", monospace;
+  font-weight: 100;
+  font-size: 0.6em;
+  transition: all 500ms ease-out;
+  pointer-events: none;
+}
+
+#instr {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 30px;
+  margin-bottom: 100px;
+  color: white;
+  font-family: "Major Mono Display", monospace;
+  font-weight: 100;
+  font-size: 1em;
+  transition: all 500ms ease-out;
+  pointer-events: none;
+}
+
+#instr1 {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 30px 30px 60px 30px;
+  color: white;
+  font-family: "Major Mono Display", monospace;
+  font-weight: 100;
+  font-size: 0.7em;
+  transition: all 500ms ease-out;
+  pointer-events: none;
 }
 
 button:hover {
-    transition-duration: 10ms;
-    background-color: rgb(198, 255, 243);
-    border-color: white;
-    transition: all 500ms ease-out;
+  transition-duration: 10ms;
+  background-color: rgb(198, 255, 243);
+  border-color: white;
+  transition: all 500ms ease-out;
 }
 
 #cover1 {
-    position: fixed;
-    inset: 0;
-    z-index: 10;
-    animation: fadein 2s none ease-out;
-    pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  animation: fadein 2s none ease-out;
+  pointer-events: none;
 }
-
 
 /* Animations */
 @keyframes fadein {
-    from {
-        background-color: rgb(0, 0, 0);
-    }
-    to {
-        background-color: #1b1b1b00;
-    }
+  from {
+    background-color: rgb(0, 0, 0);
+  }
+  to {
+    background-color: #1b1b1b00;
+  }
 }
 
 @keyframes intro {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeo {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    width: 220px;
+  }
+}
+
+@keyframes fadei {
+  from {
+    opacity: 0;
+    width: 220px;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeo1 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    margin: 0;
+  }
+}
+
+@keyframes fadei1 {
+  from {
+    margin: 0;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Tablet */
 @media screen and (max-width: 1080px) {
-    #ytape {
-        font-size: 5vw;
-    }
+  #ytape {
+    font-size: 5vw;
+  }
 }
 
 /* Phone */
 @media screen and (max-width: 720px) {
-    #ytape {
-        font-size: 7vw;
-    }
+  #ytape {
+    font-size: 6vw;
+  }
 
+  .navitems {
+    animation: none fadeo1 1s;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  nav #burg {
+    animation: none fadei 1s;
+    opacity: 1;
+  }
+
+  #instr {
+    font-size: 0.8em;
+    margin-bottom: 6.8em;
+  }
+
+  #instr1 {
+    font-size: 0.6em;
+    margin-bottom: 5.5em;
+  }
+
+  #ref {
+    font-size: 0.5em;
+  }
 }
 
-@media screen and (max-width: 360px) {
-    #ref {
-        font-size: 3vw;
-    }
+@media screen and (max-width: 420px) {
+  #ref {
+    opacity: 0;
+    transition: all 200ms ease-out;
+  }
+
+  #instr {
+    opacity: 0;
+    transition: all 200ms ease-out;
+  }
+
+  #instr1 {
+    opacity: 0;
+    transition: all 200ms ease-out;
+  }
+}
+
+.major-mono-display-regular {
+  font-family: "Major Mono Display", monospace;
+  font-weight: 400;
+  font-style: normal;
 }

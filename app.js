@@ -16,10 +16,12 @@ document.getElementById("container3D").appendChild(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
-controls.maxPolarAngle = 1.5;
+controls.maxPolarAngle = 1.7;
+controls.rotateSpeed = 1.5;
 controls.maxDistance = 10;
 controls.minDistance = 3;
 controls.enablePan = false;
+
 
 camera.position.set(4, 0, 1);
 
@@ -32,7 +34,7 @@ loader.load(
   function (gltf) {
     migu = gltf.scene;
     migu.position.z = 0.015;
-    migu.position.y = -0.2;
+    migu.position.y = -0.23;
     scene.add(migu);
   },
   function (xhr) {
@@ -56,13 +58,11 @@ window.addEventListener("resize", () => {
   camera.updateProjectionMatrix();
 });
 
-window.addEventListener("dragend", () => {
-  controls.enableDamping = false;
+window.addEventListener('dblclick', event => {
   gsap.to(camera.position, {
-    duration: 1,
+    duration: 1.5,
     x: 4,
     y: 0,
     z: 1,
   });
-  controls.enableDamping = true;
 });

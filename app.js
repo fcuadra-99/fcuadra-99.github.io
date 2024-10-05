@@ -56,7 +56,6 @@ window.addEventListener("resize", () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
-  animpageld();
   if (window.innerWidth > 780) {
     gsap.to(document.querySelector(".sidepop"), {
       width: "0%",
@@ -112,11 +111,6 @@ function reset() {
   controls.enabled = true;
 }
 
-function pop() {
-  var popup = document.getElementById("myPopup");
-  popup.classList.toggle("show");
-}
-
 var burged = 0;
 
 document.querySelector("#burg").onclick = function () {
@@ -148,3 +142,31 @@ document.querySelector("#burg").onclick = function () {
   burged++;
 };
 
+document.querySelector("#burg").ontouchend = function () {
+  if (burged % 2 == 0) {
+    gsap.to(document.querySelectorAll("#burg .burger"), {
+      backgroundColor: "aquamarine",
+      duration: 1,
+    });
+    gsap.to(document.querySelector(".sidepop"), {
+      opacity: 1,
+      pointerEvents: "all",
+      width: "100%",
+      duration: 1,
+    });
+  } else {
+    gsap.to(document.querySelectorAll(".burger"), {
+      backgroundColor: "white",
+      duration: 1,
+    });
+    gsap.to(document.querySelector(".sidepop"), {
+      opacity: 0,
+      width: "0%",
+      pointerEvents: "none",
+      duration: 1,
+    });
+  }
+  console.log("burged " + burged);
+
+  burged++;
+};

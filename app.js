@@ -102,12 +102,14 @@ if (
 }
 
 function reset() {
+  controls.enabled = false;
   gsap.to(camera.position, {
     duration: 1.5,
     x: 4,
     y: 0,
     z: 1,
   });
+  controls.enabled = true;
 }
 
 function pop() {

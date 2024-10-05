@@ -7,6 +7,10 @@
   --blackt: rgba(0, 0, 0, 0.603);
 }
 
+* {
+  text-decoration: none;
+}
+
 body {
   margin: 0;
   background-color: #1b1b1b;
@@ -27,12 +31,13 @@ nav {
 }
 
 .topnav {
-  padding: 0px 20px 15px 20px;
+  padding: 0px 0px 15px 0px;
+  margin-right: 25px;
   float: right;
 }
 
 .navitems {
-  animation: none fadei1 0.8s;
+  transition: all 500ms ease-out;
   opacity: 1;
   display: block;
   padding: 22px 0px;
@@ -54,7 +59,7 @@ nav #actn {
 
 nav .navitems:hover{
   background-color: white;
-  color: black;
+  color: var(--black)!important;
   transition: all 500ms ease-out;
 }
 
@@ -70,6 +75,8 @@ nav .navitems:hover{
   overflow: hidden;
   opacity: 0;
   pointer-events: none;
+  text-decoration: none;
+  
 }
 
 .sidepop .sidei {
@@ -96,7 +103,6 @@ nav .navitems:hover{
 }
 
 nav #burg {
-  width: 30px;
   height: 30px;
   position: fixed;
   top: 0;
@@ -105,7 +111,8 @@ nav #burg {
   margin-right: 30px;
   opacity: 0;
   pointer-events: none;
-  animation: none fadeo 0.8s;
+  width: 220px;
+  transition: all 500ms ease-out;
 }
 
 #burg div {
@@ -234,61 +241,9 @@ button:hover {
   pointer-events: none;
 }
 
-/* Animations */
+/* Animations*/
 @keyframes fadein {
-  from {
-    background-color: rgb(0, 0, 0);
-  }
-  to {
-    background-color: #1b1b1b00;
-  }
-}
-
-@keyframes intro {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeo {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    width: 220px;
-  }
-}
-
-@keyframes fadei {
-  from {
-    opacity: 0;
-    width: 220px;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeo1 {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes fadei1 {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  
 }
 
 /* Tablet */
@@ -304,16 +259,23 @@ button:hover {
     font-size: 6vw;
   }
 
+  .topnav {
+    transition: all 500ms ease-out;
+    margin-right: 50px;
+  }
+
   .navitems {
-    animation: none fadeo1 0.8s;
+    transition: all 500ms ease-out;
     opacity: 0;
     pointer-events: none;
+    width: 15px;
   }
 
   nav #burg {
-    animation: none fadei 0.8s;
+    width: 30px;
     opacity: 1;
     pointer-events: all;
+    transition: all 500ms ease-out;
   }
 
   #instr {

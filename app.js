@@ -223,10 +223,6 @@ function theme(bkeds) {
 
 document.querySelector("#burg").onclick = function () {
   if (burged % 2 == 0) {
-    gsap.to(document.querySelectorAll("#burg .burger"), {
-      backgroundColor: "aquamarine",
-      duration: 1,
-    });
     gsap.to(document.querySelector(".sidepop"), {
       opacity: 1,
       pointerEvents: "all",
@@ -234,10 +230,6 @@ document.querySelector("#burg").onclick = function () {
       duration: 1,
     });
   } else {
-    gsap.to(document.querySelectorAll("#burg .burger"), {
-      backgroundColor: "white",
-      duration: 1,
-    });
     gsap.to(document.querySelector(".sidepop"), {
       opacity: 0,
       width: "0%",
@@ -252,10 +244,6 @@ document.querySelector("#burg").onclick = function () {
 
 document.querySelector("#burg").ontouchend = function () {
   if (burged % 2 == 0) {
-    gsap.to(document.querySelectorAll("#burg .burger"), {
-      backgroundColor: "aquamarine",
-      duration: 1,
-    });
     gsap.to(document.querySelector(".sidepop"), {
       opacity: 1,
       pointerEvents: "all",
@@ -263,10 +251,6 @@ document.querySelector("#burg").ontouchend = function () {
       duration: 1,
     });
   } else {
-    gsap.to(document.querySelectorAll("#burg .burger"), {
-      backgroundColor: "white",
-      duration: 1,
-    });
     gsap.to(document.querySelector(".sidepop"), {
       opacity: 0,
       width: "0%",

@@ -73,10 +73,10 @@ var bked;
 var burged = 0;
 
 if (
-  localStorage.getItem("bked") != null ||
-  localStorage.getItem("bked") != NaN
+  sessionStorage.getItem("bked") != null ||
+  sessionStorage.getItem("bked") != NaN
 ) {
-  bked = localStorage.getItem("bked");
+  bked = sessionStorage.getItem("bked");
   console.log(bked);
   if (bked % 2 != 0) {
     document.querySelector(":root").style.setProperty("--black", "#ffffff");
@@ -117,25 +117,25 @@ if (
   }
 } else {
   bked = 0;
-  localStorage.setItem("bked", bked);
+  sessionStorage.setItem("bked", bked);
 }
 
 
 window.addEventListener("dragend", () => {
-  bked = localStorage.getItem("bked");
+  bked = sessionStorage.getItem("bked");
   theme(bked);
   bked++;
   if (
-    localStorage.getItem("bked") == null ||
-    localStorage.getItem("bked") == NaN ||
-    localStorage.getItem("bked") >= 99
+    sessionStorage.getItem("bked") == null ||
+    sessionStorage.getItem("bked") == NaN ||
+    sessionStorage.getItem("bked") >= 99
   ) {
     bked = 0;
-    localStorage.setItem("bked", bked);
-    console.log(localStorage.getItem("bked"));
+    sessionStorage.setItem("bked", bked);
+    console.log(sessionStorage.getItem("bked"));
   } else {
-    localStorage.setItem("bked", bked);
-    console.log(localStorage.getItem("bked"));
+    sessionStorage.setItem("bked", bked);
+    console.log(sessionStorage.getItem("bked"));
   }
 });
 
@@ -250,7 +250,7 @@ document.querySelector("#burg").onclick = function () {
   burged++;
 };
 
-document.querySelector("#burg").ontouchstart = function () {
+document.querySelector("#burg").ontouchend = function () {
   if (burged % 2 == 0) {
     gsap.to(document.querySelectorAll("#burg .burger"), {
       backgroundColor: "aquamarine",

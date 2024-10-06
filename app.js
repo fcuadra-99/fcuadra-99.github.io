@@ -92,9 +92,7 @@ if (
       .style.setProperty("--activeb", "rgb(77, 219, 212)");
     document.querySelector(":root").style.setProperty("--active", "#ffffff");
     document.querySelector(":root").style.setProperty("--font", "#000000");
-    document
-      .querySelector(":root")
-      .style.setProperty("--bod", "#f5f5f5");
+    document.querySelector(":root").style.setProperty("--bod", "#f5f5f5");
     document.querySelector(":root").style.setProperty("--nav", "#ffffff");
   } else {
     document.querySelector(":root").style.setProperty("--black", "#000000");
@@ -119,7 +117,6 @@ if (
   bked = 0;
   sessionStorage.setItem("bked", bked);
 }
-
 
 window.addEventListener("dragend", () => {
   bked = sessionStorage.getItem("bked");
@@ -168,6 +165,47 @@ if (
   )
 ) {
   document.body.addEventListener("touchend", dbtap());
+  document.querySelector("#burg").ontouchend = function () {
+    if (burged % 2 == 0) {
+      gsap.to(document.querySelector(".sidepop"), {
+        opacity: 1,
+        pointerEvents: "all",
+        width: "100%",
+        duration: 1,
+      });
+    } else {
+      gsap.to(document.querySelector(".sidepop"), {
+        opacity: 0,
+        width: "0%",
+        pointerEvents: "none",
+        duration: 1,
+      });
+    }
+    console.log("burged " + burged);
+
+    burged++;
+  };
+} else if (/Windows|Macintosh|Linux/i.test(navigator.userAgent)) {
+  document.querySelector("#burg").onclick = function () {
+    if (burged % 2 == 0) {
+      gsap.to(document.querySelector(".sidepop"), {
+        opacity: 1,
+        pointerEvents: "all",
+        width: "100%",
+        duration: 1,
+      });
+    } else {
+      gsap.to(document.querySelector(".sidepop"), {
+        opacity: 0,
+        width: "0%",
+        pointerEvents: "none",
+        duration: 1,
+      });
+    }
+    console.log("burged " + burged);
+
+    burged++;
+  };
 }
 
 function reset() {
@@ -220,45 +258,3 @@ function theme(bkeds) {
       .style.setProperty("--nav", "rgb(44, 44, 44)");
   }
 }
-
-document.querySelector("#burg").onclick = function () {
-  if (burged % 2 == 0) {
-    gsap.to(document.querySelector(".sidepop"), {
-      opacity: 1,
-      pointerEvents: "all",
-      width: "100%",
-      duration: 1,
-    });
-  } else {
-    gsap.to(document.querySelector(".sidepop"), {
-      opacity: 0,
-      width: "0%",
-      pointerEvents: "none",
-      duration: 1,
-    });
-  }
-  console.log("burged " + burged);
-
-  burged++;
-};
-
-document.querySelector("#burg").ontouchend = function () {
-  if (burged % 2 == 0) {
-    gsap.to(document.querySelector(".sidepop"), {
-      opacity: 1,
-      pointerEvents: "all",
-      width: "100%",
-      duration: 1,
-    });
-  } else {
-    gsap.to(document.querySelector(".sidepop"), {
-      opacity: 0,
-      width: "0%",
-      pointerEvents: "none",
-      duration: 1,
-    });
-  }
-  console.log("burged " + burged);
-
-  burged++;
-};

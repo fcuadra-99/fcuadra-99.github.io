@@ -71,11 +71,13 @@ nav .navitems:hover{
   background-color: var(--hilb)!important;
   color: var(--hili)!important;
   transition: all 500ms ease-out;
+  box-shadow: 0px 0px 5px;
 }
 
 nav .navitems:not(#actn):hover > #actn{
   color: var(--font)!important;
   transition: all 500ms ease-out;
+  box-shadow: 0px 0px 5px;
 }
 
 .sidepop {
@@ -91,7 +93,8 @@ nav .navitems:not(#actn):hover > #actn{
   opacity: 0;
   pointer-events: none;
   text-decoration: none;
-  
+  transition: all 300ms ease-out;
+  width: 0%;
 }
 
 .sidepop .sidei {
@@ -214,7 +217,7 @@ button {
   transition: all 500ms ease-out;
   color: var(--font)!important;
   pointer-events: none;
-  text-shadow: 0px 0px 10px #0000004b;
+  text-shadow: 0px 0px 5px #0000004d;
 }
 
 #instr {
@@ -229,7 +232,7 @@ button {
   transition: all 500ms ease-out;
   pointer-events: none;
   color: var(--font)!important;
-  text-shadow: 0px 0px 10px #0000004d;
+  text-shadow: 0px 0px 5px #0000004d;
 }
 
 #instr1 {
@@ -243,7 +246,7 @@ button {
   transition: all 500ms ease-out;
   pointer-events: none;
   color: var(--font)!important;
-  text-shadow: 0px 0px 10px #00000033;
+  text-shadow: 0px 0px 5px #0000004d;
 }
 
 button:hover {
@@ -276,6 +279,20 @@ button:hover {
 @media screen and (max-width: 1080px) {
   #ytape {
     font-size: 5vw;
+  }
+
+  .navitems {
+    transition: all 500ms ease-out;
+    opacity: 1;
+    pointer-events: all;
+    width: 75px;
+  }
+
+  nav #burg {
+    width: 220px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 500ms ease-out;
   }
 }
 
@@ -344,18 +361,6 @@ button:hover {
 
   button {
     font-size: 0.65em;
-  }
-
-  .navitems {
-    animation: none fadeo1 0.8s;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  nav #burg {
-    animation: none fadei 0.8s;
-    opacity: 1;
-    pointer-events: all;
   }
 
   #ref {

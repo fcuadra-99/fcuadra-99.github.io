@@ -145,7 +145,6 @@ nav #burg {
 
 nav #burg:hover > .burger {
   transition: all 300ms ease-out;
-  background-color: var(--blue) !important;
 }
 
 #logo {
@@ -187,7 +186,7 @@ nav #burg:hover > .burger {
 button {
   float: inline-end;
   border-color: rgba(240, 248, 255, 0);
-  border-radius: 5px;
+  border-radius: 13px;
   background-color: rgb(104, 230, 223);
   font-family: "Major Mono Display", monospace;
   position: absolute;

@@ -140,22 +140,7 @@ window.addEventListener("dblclick", (event) => {
   reset();
 });
 
-function dbtap() {
-  let last = 0;
-  let tm;
-  return function dbtap(event) {
-    const curTime = new Date().getTime();
-    const tapLen = curTime - last;
-    if (tapLen < 250 && tapLen > 100) {
-      reset();
-    } else {
-      tm = setTimeout(() => {
-        clearTimeout(tm);
-      }, 250);
-    }
-    last = curTime;
-  };
-}
+var dy = 0;
 
 console.log(navigator.userAgent);
 
@@ -165,20 +150,66 @@ if (
   )
 ) {
   document.body.addEventListener("touchend", dbtap());
+  document.querySelector("button").addEventListener("touchmove", () => {
+    if (dy == 0) {
+      bked = sessionStorage.getItem("bked");
+      theme(bked);
+      bked++;
+
+      document.querySelector("button").addEventListener("touchend", () => {
+        if (
+          sessionStorage.getItem("bked") == null ||
+          sessionStorage.getItem("bked") == NaN ||
+          sessionStorage.getItem("bked") >= 99
+        ) {
+          bked = 0;
+          sessionStorage.setItem("bked", bked);
+          console.log(sessionStorage.getItem("bked"));
+        } else {
+          sessionStorage.setItem("bked", bked);
+          console.log(sessionStorage.getItem("bked"));
+        }
+        
+        dy = 1;
+      });
+    } else {
+      bked = sessionStorage.getItem("bked");
+      theme(bked);
+      bked++;
+
+      document.querySelector("button").addEventListener("touchend", () => {
+        if (
+          sessionStorage.getItem("bked") == null ||
+          sessionStorage.getItem("bked") == NaN ||
+          sessionStorage.getItem("bked") >= 99
+        ) {
+          bked = 0;
+          sessionStorage.setItem("bked", bked);
+          console.log(sessionStorage.getItem("bked"));
+        } else {
+          sessionStorage.setItem("bked", bked);
+          console.log(sessionStorage.getItem("bked"));
+        }
+        
+        dy = 0;
+      });
+    }
+  });
+
   document.querySelector("#burg").ontouchend = function () {
     if (burged % 2 == 0) {
       gsap.to(document.querySelector(".sidepop"), {
         opacity: 1,
         pointerEvents: "all",
         width: "100%",
-        duration: 1,
+        duration: 0.5,
       });
     } else {
       gsap.to(document.querySelector(".sidepop"), {
         opacity: 0,
         width: "0%",
         pointerEvents: "none",
-        duration: 1,
+        duration: 0.5,
       });
     }
     console.log("burged " + burged);
@@ -192,14 +223,14 @@ if (
         opacity: 1,
         pointerEvents: "all",
         width: "100%",
-        duration: 1,
+        duration: 0.5,
       });
     } else {
       gsap.to(document.querySelector(".sidepop"), {
         opacity: 0,
         width: "0%",
         pointerEvents: "none",
-        duration: 1,
+        duration: 0.5,
       });
     }
     console.log("burged " + burged);
@@ -257,4 +288,21 @@ function theme(bkeds) {
       .querySelector(":root")
       .style.setProperty("--nav", "rgb(44, 44, 44)");
   }
+}
+
+function dbtap() {
+  let last = 0;
+  let tm;
+  return function dbtap(event) {
+    const curTime = new Date().getTime();
+    const tapLen = curTime - last;
+    if (tapLen < 250 && tapLen > 100) {
+      reset();
+    } else {
+      tm = setTimeout(() => {
+        clearTimeout(tm);
+      }, 250);
+    }
+    last = curTime;
+  };
 }

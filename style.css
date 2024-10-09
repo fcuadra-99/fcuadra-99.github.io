@@ -35,7 +35,6 @@ body {
   margin: 0;
   background-color: var(--bod);
   overflow: hidden;
-  align-content: center;
   transition: all 500ms ease-out;
 }
 
@@ -186,7 +185,7 @@ nav #burg:hover > .burger {
 button {
   float: inline-end;
   border-color: rgba(240, 248, 255, 0);
-  border-radius: 13px;
+  border-radius: 20px;
   background-color: rgb(104, 230, 223);
   font-family: "Major Mono Display", monospace;
   position: absolute;
@@ -253,6 +252,20 @@ button:hover {
   background-color: rgb(198, 255, 243);
   border-color: white;
   transition: all 500ms ease-out;
+}
+
+.abt {
+  color: var(--font);
+  font-family: "Major Mono Display", monospace;
+  margin-top: 70px;
+}
+
+.abt h1 {
+  font-size: 20px;
+}
+
+.invis {
+  display: none;
 }
 
 /* Animations*/
@@ -333,6 +346,10 @@ button:hover {
   #ref {
     font-size: 0.5em;
   }
+
+  button {
+    min-height: 3em;
+  }
 }
 
 @media screen and (max-width: 420px) {
@@ -349,6 +366,11 @@ button:hover {
   #instr1 {
     opacity: 0;
     transition: all 200ms ease-out;
+  }
+
+  button {
+    font-size: 0.7em;
+    min-width: 90px;
   }
 }
 

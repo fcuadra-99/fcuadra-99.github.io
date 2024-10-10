@@ -186,7 +186,7 @@ button {
   float: inline-end;
   border-color: rgba(240, 248, 255, 0);
   border-radius: 20px;
-  background-color: rgb(104, 230, 223);
+  background-color: var(--blue);
   font-family: "Major Mono Display", monospace;
   position: absolute;
   border: 20px;
@@ -266,6 +266,11 @@ button:hover {
 
 .invis {
   display: none;
+}
+
+#burg:active .burger {
+  background-color: var(--blue)!important;
+  transition: all 0s ease-in;
 }
 
 /* Animations*/

@@ -10,11 +10,12 @@ const camera = new THREE.PerspectiveCamera(
   500
 );
 
+//Camera Controls
 const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById("container3D").appendChild(renderer.domElement);
-
 const controls = new OrbitControls(camera, renderer.domElement);
+
 controls.enableDamping = true;
 controls.maxPolarAngle = 1.7;
 controls.rotateSpeed = 1.5;
@@ -22,10 +23,20 @@ controls.dampingFactor = 0.03;
 controls.maxDistance = 10;
 controls.minDistance = 3;
 controls.enablePan = false;
-
 camera.position.set(4, 0, 1);
-
 const scene = new THREE.Scene();
+
+//Ground
+const g1 = new THREE.CircleGeometry( 0.07, 32 ); 
+const shad = new THREE.MeshBasicMaterial( { color: 0x000000, opacity: 0.15 } ); 
+const c1 = new THREE.Mesh( g1, shad );
+c1.rotateX(4.71);
+c1.position.y += -0.1852;
+scene.add( c1 );
+
+const dl = new THREE.DirectionalLight( 0x0fffff, 1 );
+scene.add( dl );
+
 
 let migu;
 const loader = new GLTFLoader();
@@ -33,7 +44,7 @@ loader.load(
   "migu.glb",
   function (gltf) {
     migu = gltf.scene;
-    migu.position.z = 0.015;
+    migu.position.z += 0.005;
     migu.position.y = -0.185;
     scene.add(migu);
   },
@@ -118,7 +129,7 @@ if (
   sessionStorage.setItem("bked", bked);
 }
 
-window.addEventListener("dragend", () => {
+document.querySelector(".btn").addEventListener("dragend", () => {
   bked = sessionStorage.getItem("bked");
   theme(bked);
   bked++;
@@ -141,8 +152,6 @@ window.addEventListener("dblclick", (event) => {
 });
 
 var dy = 0;
-
-console.log(navigator.userAgent);
 
 if (
   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -232,11 +241,13 @@ if (
         pointerEvents: "none",
         duration: 0.5,
       });
+      document.querySelector("#burg").style.setProperty("background-color", "var(--white)")
     }
-    console.log("burged " + burged);
-
     burged++;
   };
+  document.querySelector("#burg").ontouchend = function () {
+    document.querySelector("#burg").style.setProperty("background-color", "var(--white)")
+  }
 }
 
 function reset() {
@@ -305,4 +316,8 @@ function dbtap() {
     }
     last = curTime;
   };
+}
+
+function mbHold() {
+  document.querySelector("#burg").style.setProperty("background-color", )
 }

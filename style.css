@@ -9,7 +9,7 @@
   --bod: rgb(124, 124, 124);
   --hilb: rgba(70, 243, 234, 0);
   --black: rgba(70, 243, 234, 0);
-  --blackt: rgba(0, 0, 0, 0.164);
+  --blackt: rgba(0, 0, 0, 0.162);
   --nav: rgba(70, 243, 234, 0); 
   --oo: #f5f5f5;
 }
@@ -84,7 +84,7 @@ nav .navitems:not(#actn):hover > #actn{
   right: 0;
   height: 100%;
   margin-top: 60px;
-  width: 0%;
+  width: 100%;
   z-index: 2;
   background-color: var(--blackt);
   transition: none 300ms ease-out;
@@ -266,6 +266,7 @@ button:hover {
 
 .invis {
   display: none;
+  
 }
 
 #burg:active .burger {

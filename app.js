@@ -27,33 +27,36 @@ camera.position.set(4, 0, 1);
 const scene = new THREE.Scene();
 
 //Ground
-const g1 = new THREE.CircleGeometry( 0.07, 32 ); 
-const shad = new THREE.MeshBasicMaterial( { color: 0x000000, opacity: 0.15 } ); 
-const c1 = new THREE.Mesh( g1, shad );
+const g1 = new THREE.CircleGeometry(0.07, 32);
+const shad = new THREE.MeshBasicMaterial({ color: 0x000000, opacity: 0.15 });
+const c1 = new THREE.Mesh(g1, shad);
 c1.rotateX(4.71);
 c1.position.y += -0.1852;
-scene.add( c1 );
+scene.add(c1);
 
-const dl = new THREE.DirectionalLight( 0x0fffff, 1 );
-scene.add( dl );
+const dl = new THREE.DirectionalLight(0x0fffff, 1);
+scene.add(dl);
 
+async function load(params) {
+  let migu;
+  const loader = new GLTFLoader();
+  loader.load(
+    "migu.glb",
+    function (gltf) {
+      migu = gltf.scene;
+      migu.position.z += 0.005;
+      migu.position.y = -0.185;
+      scene.add(migu);
+    },
+    function (xhr) {
+      document.getElementById("container3D").style.animation =
+        "intro 1s ease-out";
+    },
+    function (error) {}
+  );
+}
 
-let migu;
-const loader = new GLTFLoader();
-loader.load(
-  "migu.glb",
-  function (gltf) {
-    migu = gltf.scene;
-    migu.position.z += 0.005;
-    migu.position.y = -0.185;
-    scene.add(migu);
-  },
-  function (xhr) {
-    document.getElementById("container3D").style.animation =
-      "intro 1s ease-out";
-  },
-  function (error) {}
-);
+load();
 
 const reRender3D = () => {
   requestAnimationFrame(reRender3D);
@@ -83,6 +86,7 @@ window.addEventListener("resize", () => {
 var bked;
 var burged = 0;
 
+//Theme
 if (
   sessionStorage.getItem("bked") != null ||
   sessionStorage.getItem("bked") != NaN
@@ -153,6 +157,7 @@ window.addEventListener("dblclick", (event) => {
 
 var dy = 0;
 
+//Detect Device
 if (
   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
     navigator.userAgent
@@ -178,7 +183,7 @@ if (
           sessionStorage.setItem("bked", bked);
           console.log(sessionStorage.getItem("bked"));
         }
-        
+
         dy = 1;
       });
     } else {
@@ -199,7 +204,7 @@ if (
           sessionStorage.setItem("bked", bked);
           console.log(sessionStorage.getItem("bked"));
         }
-        
+
         dy = 0;
       });
     }
@@ -241,15 +246,20 @@ if (
         pointerEvents: "none",
         duration: 0.5,
       });
-      document.querySelector("#burg").style.setProperty("background-color", "var(--white)")
+      document
+        .querySelector("#burg")
+        .style.setProperty("background-color", "var(--white)");
     }
     burged++;
   };
   document.querySelector("#burg").ontouchend = function () {
-    document.querySelector("#burg").style.setProperty("background-color", "var(--white)")
-  }
+    document
+      .querySelector("#burg")
+      .style.setProperty("background-color", "var(--white)");
+  };
 }
 
+//Functions
 function reset() {
   controls.enabled = false;
   gsap.to(camera.position, {
@@ -319,5 +329,7 @@ function dbtap() {
 }
 
 function mbHold() {
-  document.querySelector("#burg").style.setProperty("background-color", )
+  document.querySelector("#burg").style.setProperty("background-color");
 }
+
+//Code

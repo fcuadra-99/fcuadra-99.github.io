@@ -332,4 +332,18 @@ function mbHold() {
   document.querySelector("#burg").style.setProperty("background-color");
 }
 
-//Code
+//pageAnim
+window.transitionToPage = function(link) {
+  document.querySelector('body').style.opacity = 0
+  setTimeout(function() { 
+      window.location.href = link;
+  }, 200)
+}
+
+document.addEventListener('DOMContentLoaded', function(event) {
+  gsap.to(document.querySelector('body'), {
+    opacity: 1,
+    duration: 0.2
+  })
+  document.querySelector('body').style.opacity = 0
+})

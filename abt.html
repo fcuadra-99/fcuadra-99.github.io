@@ -9,8 +9,8 @@
       <a href=""><div id="logo"></div></a>
       <section class="topnav">
         <div id="actn" class="navitems">aBouT</div>
-        <a href="labs.html"><div class="navitems">LAbs</div></a>
-        <a href="index.html"><div class="navitems">hoME</div></a>
+        <div class="navitems" onclick="transitionToPage('/labs.html')">LAbs</div>
+        <div class="navitems" onclick="transitionToPage('/index.html')">hoME</div>
       </section>
 
       <div id="burg">
@@ -21,8 +21,8 @@
     </nav>
 
     <div class="sidepop">
-      <a href="index.html"><div class="sidei">hoME</div></a>
-      <a href="labs.html"><div class="sidei">LAbs</div></a>
+      <div class="sidei" onclick="transitionToPage('/index.html')">hoME</div>
+      <div class="sidei" onclick="transitionToPage('/labs.html')">LAbs</div>
       <div id="acts" class="sidei">aBouT</div>
     </div>
   </head>

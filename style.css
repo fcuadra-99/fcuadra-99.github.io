@@ -274,6 +274,11 @@ button:hover {
   transition: all 0s ease-in;
 }
 
+::view-transition-old,
+::view-transition-new {
+  animation-duration: 1s;
+}
+
 /* Animations*/
 @keyframes fadein {
   from {

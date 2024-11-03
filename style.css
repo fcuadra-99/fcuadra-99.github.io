@@ -6,7 +6,7 @@
   --activeb: rgba(70, 243, 234, 0);
   --font: rgba(70, 243, 234, 0);
   --hili: rgba(70, 243, 234, 0);
-  --bod: rgb(124, 124, 124);
+  --bod: rgba(141, 141, 141, 0.534);
   --hilb: rgba(70, 243, 234, 0);
   --black: rgba(70, 243, 234, 0);
   --blackt: rgba(0, 0, 0, 0.162);
@@ -147,12 +147,17 @@ nav #burg:hover > .burger {
 }
 
 #logo {
-  background-color: var(--blue);
   width: 30px;
   height: 30px;
   border-radius: 50%;
   float: inline-start;
-  margin: 15px 20px 20px 25px;
+  margin: 12px 20px 20px 15px;
+}
+
+#logo img {
+  width: 35px;
+  height: 35px;
+  border-radius: 10%;
 }
 
 #ytape {

@@ -1,5 +1,5 @@
 //Fetch products
-fetch("/prods.json")
+fetch("/labres/Croquant/prods.json")
   .then((f) => f.json())
   .then((json) => {
     var jsn = JSON.stringify(json);

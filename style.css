@@ -142,6 +142,12 @@ nav #burg {
   transition: all 300ms ease-out;
 }
 
+#Croquant {
+  position: absolute;
+  left: 30px;
+  top: 90px;
+}
+
 nav #burg:hover > .burger {
   transition: all 300ms ease-out;
 }

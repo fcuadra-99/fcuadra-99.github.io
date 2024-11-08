@@ -2,85 +2,85 @@
   {
     "id": 1,
     "name": "b1",
-    "img": "/res/b1.jpg",
+    "img": "./res/b1.jpg",
     "deets": "Lorem Ipsum"
   },
   {
     "id": 2,
     "name": "b2",
-    "img": "/res/b2.jpg",
+    "img": "./res/b2.jpg",
     "deets": "Lorem Ipsum"
   },
   {
     "id": 3,
     "name": "bd1",
-    "img": "/res/bd1.png",
+    "img": "./res/bd1.png",
     "deets": "Lorem Ipsum"
   },
   {
     "id": 4,
     "name": "bd2 ",
-    "img": "/res/bd2.jpg",
+    "img": "./res/bd2.jpg",
     "deets": "Lorem Ipsum"
   },
   {
     "id": 5,
     "name": "bd3",
-    "img": "/res/bd3.jpg",
+    "img": "./res/bd3.jpg",
     "deets": "Lorem Ipsum"
   },
   {
     "id": 6,
     "name": "f1",
-    "img": "/res/f1.jpg",
+    "img": "./res/f1.jpg",
     "deets": "Lorem Ipsum"
   },
   {
     "id": 7,
     "name": "f2",
-    "img": "/res/f2.jpg",
+    "img": "./res/f2.jpg",
     "deets": "Lorem Ipsum"
   },
   {
     "id": 8,
     "name": "f3",
-    "img": "/res/f3.png",
+    "img": "./res/f3.png",
     "deets": "Lorem Ipsum"
   },
   {
     "id": 9,
     "name": "h1",
-    "img": "/res/h1.jpg",
+    "img": "./res/h1.jpg",
     "deets": "Lorem Ipsum"
   },
   {
     "id": 10,
     "name": "h2",
-    "img": "/res/h2.jpg",
+    "img": "./res/h2.jpg",
     "deets": "Lorem Ipsum"
   },
   {
     "id": 11,
     "name": "p1",
-    "img": "/res/p1.jpg",
+    "img": "./res/p1.jpg",
     "deets": "Lorem Ipsum"
   },
   {
     "id": 12,
     "name": "p2",
-    "img": "/res/p2.jpg",
+    "img": "./res/p2.jpg",
     "deets": "Lorem Ipsum"
   },
   {
     "id": 13,
     "name": "t1",
-    "img": "/res/t1.jpg",
+    "img": "./res/t1.jpg",
     "deets": "Lorem Ipsum"
   },
   {
     "id": 14,
     "name": "t2",
-    "img": "/res/t2.jpg",
+    "img": "./res/t2.jpg",
     "deets": "Lorem Ipsum"
   }
 ]

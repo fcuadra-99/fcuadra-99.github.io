@@ -7,7 +7,7 @@ var con = mysql.createConnection({
   database: "croquant",
 });
 
-function seeProdd() {
+export default function seeProdd() {
   con.connect(function (err) {
     if (err) throw err;
     con.query("SELECT * FROM products", function (err, result, fields) {

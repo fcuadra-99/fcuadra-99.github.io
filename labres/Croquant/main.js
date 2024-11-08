@@ -104,8 +104,8 @@ var trns = document.querySelector(".invis");
 var pop = document.querySelector(".show");
 document.getElementById("cart").onclick = car;
 
-//import db from "./db.js";
-//db.seeProdd();
+import db from "./db.js";
+db.seeProdd();
 
 //Functions
 function car() {

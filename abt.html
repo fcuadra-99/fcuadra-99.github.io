@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zone</title>
     <link rel="stylesheet" href="/style.css" />
-    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="icon" type="image/png" href="/logo.png" />
     <nav>
-      <div id="logo"><img src="/logo.png" alt="logo"></div>
+      <div id="logo"><img src="/logo.png" alt="logo" /></div>
+      <div id="logob"><img src="/logob.png" alt="logob" /></div>
       <section class="topnav">
         <div id="actn" class="navitems">aBouT</div>
-        <div class="navitems" onclick="transitionToPage('/labs.html')">LAbs</div>
-        <div class="navitems" onclick="transitionToPage('/index.html')">hoME</div>
+        <div class="navitems" onclick="transitionToPage('/labs.html')">
+          LAbs
+        </div>
+        <div class="navitems" onclick="transitionToPage('/index.html')">
+          hoME
+        </div>
       </section>
 
       <div id="burg">
@@ -29,82 +34,137 @@
   </head>
 
   <body>
-    <!-- <div class="abt">
-      <h1>
-        Francis Neil V. Cuadra <br />
-        Programmer | Media Enthusiast
-      </h1>
+    <div class="p">
+      <header class="h">
+        <div class="pfp-container">
+          <img src="/77.jpg" class="pfp" />
+        </div>
+        <h1>
+          Francis Neil V. Cuadra <br />
+          Developer | Media Enthusiast
+        </h1>
+      </header>
 
-      <h3>
-        About Me Hello! I’m Francis Neil V. Cuadra, a passionate programmer with
-        a keen interest in various forms of media. I love combining technology
-        with creativity to build innovative solutions and explore new ideas.
-      </h3>
+      <hr />
+      <section class="a">
+        <h3>About Me</h3>
+        <hr>
+        <p>
+          hello! i’m francis neil v. cuadra, a passionate programmer with an
+          interest in various forms of media. i love combining technology with
+          creativity to build innovative solutions and explore new ideas.
+        </p>
+      </section>
 
-      <p>
-        <b>Skills</b> <br />
-        Programming Languages: [List languages you know, e.g., Python,
-        JavaScript, C++, etc.] <br />
-        Web Development: [HTML, CSS, JavaScript frameworks, etc.] <br />
-        Software Development: [Mention any relevant frameworks, libraries,
-        ortools.] <br />
-        Media Production: [Describe your experience with audio/video editing,
-        graphic design, etc.]
-      </p>
+      <hr />
+      <section class="s">
+        <h3>Skills</h3>
+        <hr>
+        <ul>
+          <li><b>programming languages:</b> java, javascript, c#.</li>
+          <li><b>web development:</b> html, css, vanilla js, svelte.</li>
+          <li>
+            <b>software development:</b> web development, java swing, unity.
+          </li>
+          <li><b>media production:</b> audio/video editing, graphic design.</li>
+        </ul>
+      </section>
 
-      <p>
-        <b>Projects</b> <br />
-        1. [Project Name] <br />
-        Description: Briefly describe the project, its purpose, and your role.
-        <br />
-        Technologies Used: [List the technologies and tools you used.] <br />
-        2. [Project Name] <br />
-        Description: Briefly describe the project, its purpose, and your role.
-        <br />
-        Technologies Used: [List the technologies and tools you used.] <br />
-        3. [Project Name] <br />
-        Description: Briefly describe the project, its purpose, and your role.
-        <br />
-        Technologies Used: <br />
-        describe the project, its purpose, and your role. Technologies Used:
-        [List the technologies and tools you used.] <br />
-      </p>
+      <hr />
 
-      <p>
-        <b>Media Interests </b> <br />
-        I enjoy exploring various forms of media, including: <br />
-        Film and Television: [Briefly describe your interests, favorite genres,
-        or notable works.] Music: [Mention any instruments you play, genres you
-        enjoy, or playlists you’ve curated.] <br />
-        Art and Design: [Discuss your favorite styles, mediums, or personal
-        projects.] <br />
-      </p>
+      <div id="github-projects">
+        <h3>github repositories</h3>
+        <table id="projects-list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
 
-      <p>
-        <b>Contact</b> <br />
-        Feel free to reach out to me for collaborations, questions, or just to
-        chat about programming and media! <br />
+      <hr />
+      <section class="mi">
+        <h3>Media Interests</h3>
+        <hr>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Film and Television</b></td>
+              <td>anime, mystery, horror, drama, action</td>
+            </tr>
+            <tr>
+              <td><b>Music</b></td>
+              <td>artcore, dubstep, classical, dnb</td>
+            </tr>
+            <tr>
+              <td><b>Art and Design</b></td>
+              <td>Anime, Realistic, Modern, simplistic</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-        Email: [your email] <br />
-        GitHub: [your GitHub profile] <br />
-      </p>
+      <hr />
+      <section class="c">
+        <h3>Contact</h3>
+        <hr>
+        <p>
+          Feel free to reach out to me for collaborations, questions, or just to
+          chat about programming and media!
+        </p>
+        <hr>
+        <h3>Send Me a message:</h3>
+        <p>Email:</p>
+        <form action="" method="post">
+          <input type="email" name="" id="" class="inp" />
+          <p>Body:</p>
+          <textarea name="" id="" cols="30" rows="10" class="inp1"></textarea>
+          <input type="submit" value="submit" class="inp3">
+        </form>
 
-      <p>
-        <b>Conclusion</b> <br />
-        Thank you for visiting my portfolio! I’m excited to connect and
-        collaborate with like-minded individuals.
-      </p>
-    </div> -->
-    
-    <a href="/archive/v1/index.html">
-      <button class="btn invis" draggable="true">pReVious Version</button>
-    </a>
+        <hr>
+        <h3>Links:</h3>
+
+        <ul>
+          <li><b>Email:</b> fcuadra_23000000@uic.edu.ph</li>
+          <li class="nodecor">
+            <b>GitHub:</b>
+            <a href="https://github.com/fcuadra-99"
+              >https://github.com/fcuadra-99</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <hr />
+      <section class="cl">
+        <h3>Conclusion</h3>
+        <hr>
+        <p>
+          thank you for visiting my portfolio! i’m excited to connect and
+          collaborate with like-minded individuals.
+        </p>
+      </section>
+    </div>
+
+    <button class="btn" draggable="true">
+      <p class="mlabe">↑drag↑</p>
+      switch Mode
+    </button>
 
     <section class="invis">
       <div id="container3D"></div>
       <div id="cover1"></div>
     </section>
   </body>
-
   <script type="module" src="app.js"></script>
 </html>

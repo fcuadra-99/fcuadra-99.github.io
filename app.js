@@ -10,6 +10,38 @@ const camera = new THREE.PerspectiveCamera(
   500
 );
 
+const apiUrl = `https://api.github.com/users/fcuadra-99/repos`;
+
+const headers = {
+  "Content-Type": "application/json",
+};
+
+fetch(apiUrl, { headers })
+  .then((response) => response.json())
+  .then((repos) => {
+    const projectsList = document
+      .getElementById("projects-list")
+      .getElementsByTagName("tbody")[0];
+
+    repos.forEach((repo) => {
+      const repoRow = document.createElement("tr");
+      repoRow.innerHTML = `
+                <td><a href="${
+                  repo.html_url
+                }" target="_blank" class="repo-link">${repo.name}</a></td>
+                <td class="repo-description">${
+                  repo.description || "No description available."
+                }</td>
+                
+            `;
+
+      projectsList.appendChild(repoRow);
+    });
+  })
+  .catch((error) => {
+    console.error("Error fetching GitHub repositories:", error);
+  });
+
 //Camera Controls
 const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -23,11 +55,11 @@ controls.dampingFactor = 0.03;
 controls.maxDistance = 10;
 controls.minDistance = 3;
 controls.enablePan = false;
-camera.position.set(4, 0, 1);
+camera.position.set(6, 0, 1);
 const scene = new THREE.Scene();
 
 //Ground
-const g1 = new THREE.CircleGeometry(0.07, 32);
+const g1 = new THREE.CircleGeometry(0.4, 32);
 const shad = new THREE.MeshBasicMaterial({ color: 0x000000, opacity: 0.15 });
 const c1 = new THREE.Mesh(g1, shad);
 c1.rotateX(4.71);
@@ -37,32 +69,40 @@ scene.add(c1);
 const dl = new THREE.DirectionalLight(0x0fffff, 1);
 scene.add(dl);
 
-async function load(params) {
-  let migu;
-  const loader = new GLTFLoader();
-  loader.load(
-    "migu.glb",
-    function (gltf) {
-      migu = gltf.scene;
-      migu.position.z += 0.005;
-      migu.position.y = -0.185;
-      scene.add(migu);
-    },
-    function (xhr) {
-      document.getElementById("container3D").style.animation =
-        "intro 1s ease-out";
-    },
-    function (error) {}
-  );
-}
+let migu;
+let mixer;
+const loader = new GLTFLoader();
+loader.load(
+  "/cat.glb",
+  function (gltf) {
+    migu = gltf.scene;
+    migu.position.z += 0.006;
+    migu.position.y = -0.18;
+    scene.add(migu);
 
-load();
+    mixer = new THREE.AnimationMixer(migu);
+
+    mixer.clipAction(gltf.animations[0]).play();
+    mixer.update(0.12);
+    mixer.delay(1);
+    console.log(gltf.animations);
+  },
+  function (xhr) {
+    document.getElementById("container3D").style.animation =
+      "intro 1s ease-out";
+  },
+  function (error) {}
+);
+
+const light = new THREE.AmbientLight(0xffffff, 2);
+scene.add(light);
 
 const reRender3D = () => {
   requestAnimationFrame(reRender3D);
-  scene.rotateY(0.05);
+  scene.rotateY(0.03);
   controls.update(2);
   renderer.render(scene, camera);
+  if (mixer) mixer.update(0.018);
 };
 reRender3D();
 
@@ -109,6 +149,8 @@ if (
     document.querySelector(":root").style.setProperty("--font", "#000000");
     document.querySelector(":root").style.setProperty("--bod", "#f5f5f5");
     document.querySelector(":root").style.setProperty("--nav", "#ffffff");
+    document.querySelector("#logo").style.setProperty("opacity", "1");
+    document.querySelector("#logob").style.setProperty("opacity", "0");
   } else {
     document.querySelector(":root").style.setProperty("--black", "#000000");
     document.querySelector(":root").style.setProperty("--hili", "#000000");
@@ -127,10 +169,54 @@ if (
     document
       .querySelector(":root")
       .style.setProperty("--nav", "rgb(44, 44, 44)");
+    document.querySelector("#logo").style.setProperty("opacity", "0");
+    document.querySelector("#logob").style.setProperty("opacity", "1");
   }
 } else {
-  bked = 0;
+  bked = 1;
   sessionStorage.setItem("bked", bked);
+  console.log(bked);
+
+  if (bked % 2 == 0) {
+    document.querySelector(":root").style.setProperty("--black", "#ffffff");
+    document.querySelector(":root").style.setProperty("--hili", "#ffffff");
+    document
+      .querySelector(":root")
+      .style.setProperty("--blue", "rgb(70, 243, 234)");
+    document
+      .querySelector(":root")
+      .style.setProperty("--hilb", "rgb(77, 219, 212)");
+    document
+      .querySelector(":root")
+      .style.setProperty("--activeb", "rgb(77, 219, 212)");
+    document.querySelector(":root").style.setProperty("--active", "#ffffff");
+    document.querySelector(":root").style.setProperty("--font", "#000000");
+    document.querySelector(":root").style.setProperty("--bod", "#f5f5f5");
+    document.querySelector(":root").style.setProperty("--nav", "#ffffff");
+    document.querySelector("#logo").style.setProperty("opacity", "1");
+    document.querySelector("#logob").style.setProperty("opacity", "0");
+  } else {
+    document.querySelector(":root").style.setProperty("--black", "#000000");
+    document.querySelector(":root").style.setProperty("--hili", "#000000");
+    document
+      .querySelector(":root")
+      .style.setProperty("--blue", "rgb(70, 243, 234)");
+    document.querySelector(":root").style.setProperty("--hilb", "#ececec");
+    document
+      .querySelector(":root")
+      .style.setProperty("--activeb", "rgb(44, 44, 44)");
+    document
+      .querySelector(":root")
+      .style.setProperty("--active", "rgb(70, 243, 234)");
+    document.querySelector(":root").style.setProperty("--font", "#ececec");
+    document.querySelector(":root").style.setProperty("--bod", "#1b1b1b");
+    document
+      .querySelector(":root")
+      .style.setProperty("--nav", "rgb(44, 44, 44)");
+    document.querySelector("#logo").style.setProperty("opacity", "0");
+    document.querySelector("#logob").style.setProperty("opacity", "1");
+  }
+  bked++;
 }
 
 document.querySelector(".btn").addEventListener("dragend", () => {
@@ -142,7 +228,7 @@ document.querySelector(".btn").addEventListener("dragend", () => {
     sessionStorage.getItem("bked") == NaN ||
     sessionStorage.getItem("bked") >= 99
   ) {
-    bked = 0;
+    bked = 1;
     sessionStorage.setItem("bked", bked);
     console.log(sessionStorage.getItem("bked"));
   } else {
@@ -264,7 +350,7 @@ function reset() {
   controls.enabled = false;
   gsap.to(camera.position, {
     duration: 1.5,
-    x: 4,
+    x: 6,
     y: 0,
     z: 1,
   });
@@ -290,7 +376,8 @@ function theme(bkeds) {
       .querySelector(":root")
       .style.setProperty("--bod", "rgb(255, 255, 255)");
     document.querySelector(":root").style.setProperty("--nav", "#ffffff");
-    document.getElementById("logo").src = "/logo";
+    document.querySelector("#logo").style.setProperty("opacity", "1");
+    document.querySelector("#logob").style.setProperty("opacity", "0");
   } else {
     document.querySelector(":root").style.setProperty("--black", "#000000");
     document.querySelector(":root").style.setProperty("--hili", "#000000");
@@ -309,7 +396,8 @@ function theme(bkeds) {
     document
       .querySelector(":root")
       .style.setProperty("--nav", "rgb(44, 44, 44)");
-    document.getElementById("logo").src = "/logob";
+    document.querySelector("#logo").style.setProperty("opacity", "0");
+    document.querySelector("#logob").style.setProperty("opacity", "1");
   }
 }
 

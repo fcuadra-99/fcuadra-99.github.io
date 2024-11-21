@@ -197,7 +197,7 @@ body {
   margin: auto;
   height: 50vw;
   width: 100%;
-  margin-bottom: 5vw;
+  margin-bottom: 100px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.384);
 }
@@ -456,6 +456,7 @@ nav #burg:hover > .burger {
   width: 100%;
   position: fixed;
   user-select: none;
+  pointer-events: none;
 }
 
 *::-webkit-scrollbar {

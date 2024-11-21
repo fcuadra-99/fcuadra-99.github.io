@@ -84,7 +84,6 @@ loader.load(
 
     mixer.clipAction(gltf.animations[0]).play();
     mixer.update(0.12);
-    mixer.delay(1);
     console.log(gltf.animations);
   },
   function (xhr) {
@@ -102,7 +101,9 @@ const reRender3D = () => {
   scene.rotateY(0.03);
   controls.update(2);
   renderer.render(scene, camera);
-  if (mixer) mixer.update(0.018);
+  setTimeout(() => {
+    if (mixer) mixer.update(0.02);
+  }, 5000);
 };
 reRender3D();
 
